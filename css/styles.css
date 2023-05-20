@@ -139,6 +139,30 @@ img {
   color: var(--brand-color7);
 }
 
+.index-window::after {
+  position: absolute;
+  display: flex;
+  top: 44px;
+  content: "";
+  margin-top: 20px;
+  background-color: currentColor;
+  width: 48px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.portfolio-window::after {
+  position: absolute;
+  display: flex;
+  top: 44px;
+  content: "";
+  margin-top: 20px;
+  background-color: currentColor;
+  width: 66px;
+  height: 4px;
+  border-radius: 2px;
+}
+
 .adress-contacts {
   font-style: normal;
 }
@@ -672,6 +696,11 @@ img {
   width: 100%;
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opasity var(--transition-duration),
+    visibility var(--transition-duration);
 }
 
 .modal {
