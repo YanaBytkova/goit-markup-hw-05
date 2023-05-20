@@ -753,7 +753,6 @@ img {
 .close-modal-btn:focus {
   background-color: var(--brand-color7);
   border: none;
-  fill: var(--brand-color1);
 }
 
 .modal-close {
@@ -761,8 +760,8 @@ img {
   transition: fill var(--transition-duration);
 }
 
-.modal-close:hover,
-.modal-close:focus {
+.close-modal-btn:hover .modal-close,
+.close-modal-btn:focus .modal-close {
   fill: var(--brand-color1);
 }
 
