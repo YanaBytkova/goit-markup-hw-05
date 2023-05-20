@@ -126,6 +126,7 @@ img {
   gap: 40px;
 }
 .menu-nav-links {
+  position: relative;
   font-weight: var(--brand-font-weight2);
   letter-spacing: 0.02em;
   color: var(--brand-color3);
@@ -139,13 +140,20 @@ img {
   color: var(--brand-color7);
 }
 
+.index-window,
+.portfolio-window {
+  color: var(--brand-color7);
+}
+
 .index-window::after {
   position: absolute;
   display: flex;
+  left: 0;
+  bottom: -1px;
   top: 44px;
   content: "";
   margin-top: 20px;
-  background-color: currentColor;
+  background-color: var(--brand-color7);
   width: 48px;
   height: 4px;
   border-radius: 2px;
@@ -154,10 +162,12 @@ img {
 .portfolio-window::after {
   position: absolute;
   display: flex;
+  left: 0;
+  bottom: -1px;
   top: 44px;
   content: "";
   margin-top: 20px;
-  background-color: currentColor;
+  background-color: var(--brand-color7);
   width: 66px;
   height: 4px;
   border-radius: 2px;
@@ -556,7 +566,9 @@ img {
   border-radius: 4px;
   color: var(--brand-color2);
   padding: 12px 24px;
-  transition: box-shadow var(--transition-duration),
+  transition: color var(--transition-duration),
+    border-color var(--transition-duration),
+    box-shadow var(--transition-duration),
     background-color var(--transition-duration);
 }
 
@@ -672,13 +684,12 @@ img {
   background-color: var(--brand-color2);
   top: 0;
   left: 0;
+  line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--brand-color6);
   width: 100%;
   height: 100%;
-  padding-top: 40px;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding: 40px 32px;
   transform: translateY(100%);
   transition: transform var(--transition-duration);
 }
@@ -699,14 +710,14 @@ img {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transition: opasity var(--transition-duration),
+  transition: opacity var(--transition-duration),
     visibility var(--transition-duration);
 }
 
 .modal {
   position: absolute;
   width: 408px;
-  height: 584px;
+  min-height: 576px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -717,12 +728,13 @@ img {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  transition: transform var(--transition-duration);
 }
 
 .close-modal-btn {
   position: absolute;
-  top: 32px;
-  right: 32px;
+  top: 24px;
+  right: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -733,10 +745,25 @@ img {
   border-radius: 50%;
   background: var(--brand-color5);
   border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background-color var(--transition-duration),
+    border var(--transition-duration);
+}
+
+.close-modal-btn:hover,
+.close-modal-btn:focus {
+  background-color: var(--brand-color7);
+  border: none;
+  fill: var(--brand-color1);
 }
 
 .modal-close {
-  color: var(--brand-color3);
+  fill: var(--brand-color3);
+  transition: fill var(--transition-duration);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  fill: var(--brand-color1);
 }
 
 .is-hidden {
